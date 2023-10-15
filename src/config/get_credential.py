@@ -1,17 +1,22 @@
 import configparser
 import os
 
-file = configparser.ConfigParser()
-file_path = os.path.join(os.path.dirname(__file__), 'secrets.ini')
-file.read(file_path)  
-
-email = file.get('Credentials', 'email')
-password = file.get('Credentials', 'password')
 
 def secrets() -> dict:
     """returns email and password"""
-    return {"email": email, "password": password}
+    if 'CI' in os.environ:
+        email = os.environ.get('email')
+        password = os.environ.get('password')
 
+    else:
+        file = configparser.ConfigParser()
+        file_path = os.path.join(os.path.dirname(__file__), 'secrets.ini')
+        file.read(file_path)  
+
+        email = file.get('Credentials', 'email')
+        password = file.get('Credentials', 'password')
+    
+    return {"email": email, "password": password}
 
 
 
