@@ -1,11 +1,11 @@
 
-name: AutoBuy CLI Continuous Integration
+name: AutoBuy  Continuous Integration
 run-name: ${{ github.actor }} is learning CI/CD & GitHub Actions for a project
 
 on:
   push:
     branches:
-      - main
+      - '*' # main
 
 
 jobs:
