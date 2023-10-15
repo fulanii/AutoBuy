@@ -19,8 +19,10 @@ jobs:
           CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${Version}/linux64/chromedriver-linux64.zip"
           wget -N ${CHROME_DRIVER_URL}
           unzip chromedriver-linux64.zip
-          chmod +x chromedriver
+          cd chromedriver-linux64
           mv chromedriver /usr/local/bin/
+          chmod +x chromedriver
+          
 
       - name: Checkout code
         uses: actions/checkout@v2
