@@ -7,7 +7,7 @@ class TestFreshLogin:
     password = secrets()["password"]
 
     def test_fresh_login(self):
-        fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=False, quit_driver=True)
+        fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=True, quit_driver=True)
 
         result =  fresh_login.fresh_login()
 
