@@ -25,7 +25,8 @@ class DriverManager:
         options = Options()
 
         # my options
-        options.headless = self.headless
+        if self.headless:
+            options.add_argument("--headless")
         options.add_experimental_option("detach", self.detach)
 
         # stealth options

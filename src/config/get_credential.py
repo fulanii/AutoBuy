@@ -9,7 +9,7 @@ email = file.get('Credentials', 'email')
 password = file.get('Credentials', 'password')
 
 def secrets() -> dict:
-    """returns username and password"""
+    """returns email and password"""
     return {"email": email, "password": password}
 
 

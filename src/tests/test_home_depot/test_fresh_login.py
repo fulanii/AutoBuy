@@ -7,9 +7,20 @@ class TestFreshLogin:
     password = secrets()["password"]
 
     def test_fresh_login(self):
-        fres_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=True, quit_driver=True)
+        fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=False, quit_driver=True)
 
-        assert 1 == 1
+        result =  fresh_login.fresh_login()
 
-    def test_cookie_logout(self):
-        ...
+        assert type(result) == dict
+        assert result["login_status_check"] == True
+        assert result["serialization_check"] == True
+        assert result["login_and_serialization_check"] == True
+        assert result["status_check_fail_amount"] <= 3
+
+
+    def test_fresh_logout(self):
+        fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=False, quit_driver=True)
+
+        fresh_login_result =  fresh_login.fresh_login()
+        assert fresh_login_result["login_and_serialization_check"] == True
+        assert fresh_login.logout_fresh_login() == True
