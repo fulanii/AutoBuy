@@ -2,10 +2,11 @@
 import os
 import time
 from bot.home_depot.logins import FreshLogin, CookiesLogin, Logout
+from config.get_credential import secrets
 
 def main():
-    EMAIL:str = "wtfyoo804@gmail.com" # os.getenv("EMAIL")
-    PASSWORD:str = """6}Eo`->0:Lz0C:f\!}*L=BD,3<P?Z{;YMVC39,F9X@<*^""" # os.getenv("PASSWORD")
+    EMAIL:str = secrets["email"]
+    PASSWORD:str = secrets["password"]
 
 
     fresh_login_homedepot = FreshLogin(email=EMAIL, password=PASSWORD, quit_driver=True)
