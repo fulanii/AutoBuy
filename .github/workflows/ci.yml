@@ -18,7 +18,7 @@ jobs:
           Version="117.0.5938.92"
           CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${Version}/linux64/chromedriver-linux64.zip"
           wget -N ${CHROME_DRIVER_URL}
-          unzip chromedriver_linux64.zip
+          unzip chromedriver-linux64.zip
           chmod +x chromedriver
           mv chromedriver /usr/local/bin/
 
