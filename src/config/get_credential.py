@@ -1,14 +1,16 @@
 import configparser
+import os
 
+file = configparser.ConfigParser()
+file_path = os.path.join(os.path.dirname(__file__), 'secrets.ini')
+file.read(file_path)  
 
-config = configparser.ConfigParser()
-config.read('secrets.ini')  
-
-email = config.get('Credentials', 'email')
-password = config.get('Credentials', 'password')
+email = file.get('Credentials', 'email')
+password = file.get('Credentials', 'password')
 
 def secrets() -> dict:
-    return {email: password}
+    """returns username and password"""
+    return {"email": email, "password": password}
 
 
 

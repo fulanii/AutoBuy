@@ -5,8 +5,8 @@ from bot.home_depot.logins import FreshLogin, CookiesLogin, Logout
 from config.get_credential import secrets
 
 def main():
-    EMAIL:str = secrets["email"]
-    PASSWORD:str = secrets["password"]
+    EMAIL = secrets()["email"]
+    PASSWORD = secrets()["password"]
 
 
     fresh_login_homedepot = FreshLogin(email=EMAIL, password=PASSWORD, quit_driver=True)

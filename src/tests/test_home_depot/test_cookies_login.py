@@ -1,7 +1,8 @@
 import pytest
-from src.bot.home_depot.logins import CookiesLogin
+from bot.home_depot.logins import CookiesLogin
+from config.get_credential import secrets
 
-class TestLogin:
+class TestCookiesLogin:
     def test_cookies_login(self):
         ...
     

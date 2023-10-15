@@ -1,11 +1,15 @@
 import pytest
-from src.bot.home_depot.logins import FreshLogin
+from bot.home_depot.logins import FreshLogin
+from config.get_credential import secrets
 
-class TestLogin:
+class TestFreshLogin:
+    email = secrets()["email"]
+    password = secrets()["password"]
+
     def test_fresh_login(self):
-        email = ""
-        password = ""
-        fres_login = FreshLogin(email=email, password=password, headless=True, quit_driver=True)
+        fres_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=True, quit_driver=True)
+
+        assert 1 == 1
 
     def test_cookie_logout(self):
         ...
