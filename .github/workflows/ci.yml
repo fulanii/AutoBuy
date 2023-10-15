@@ -5,7 +5,7 @@ run-name: ${{ github.actor }} is learning CI/CD & GitHub Actions for a project
 on:
   push:
     branches:
-      - '*' # main
+      - main
 
 
 jobs:
