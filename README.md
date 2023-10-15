@@ -47,7 +47,7 @@ AutoBuy/
 |__ .gitignore
 ```
 
-
+<!-- 
 ## Tech Stack:
 Programming Language: Python 3.11.x
 
@@ -74,4 +74,4 @@ Web Technologies:
 - CSS3
 
 
-## 
+##  -->
