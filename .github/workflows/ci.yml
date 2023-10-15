@@ -20,8 +20,8 @@ jobs:
           wget -N ${CHROME_DRIVER_URL}
           unzip chromedriver-linux64.zip
           cd chromedriver-linux64
-          mv chromedriver /usr/local/bin/
           chmod +x chromedriver
+          mv chromedriver /usr/local/bin/
           
 
       - name: Checkout code
