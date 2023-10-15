@@ -1,0 +1,20 @@
+# Ignore compiled Python files
+*.pyc
+.DS_Store 
+
+# Ignore environment and IDE-specific files
+venv/
+.vscode/
+.idea/
+.python-version
+
+# Ignore log files
+*.log
+
+# Ignore sensitive or private information
+config.py
+
+# Ignore runtime files and directories
+__pycache__/
+instance/
+AutoBuy.egg-info/

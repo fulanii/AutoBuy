@@ -1,0 +1,32 @@
+
+name: AutoBuy CLI Continuous Integration
+run-name: ${{ github.actor }} is learning CI/CD & GitHub Actions for a project
+
+on:
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.3
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Lint code
+        run: |
+          pip install pylint
+          pylint src
+
+      - name: Run tests
+        run: |
+          pip install pytest
+          pytest src/tests
