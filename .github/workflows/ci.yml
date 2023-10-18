@@ -13,7 +13,7 @@ jobs:
       - name: Download Chrome Browser  # Version 117.0.5938.149 (Official Build) (x86_64)
         run: |
           sudo apt-get update
-          sudo apt-get install google-chrome-stable=117.0.5938.149
+          sudo apt-get install google-chrome-stable
 
       - name: Download Chrome WebDriver
         run: |
