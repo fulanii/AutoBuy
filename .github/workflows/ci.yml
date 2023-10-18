@@ -18,7 +18,7 @@ jobs:
       - name: Download Chrome WebDriver
         run: |
           driver_version="117.0.5938.92"
-          CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${driver_ersion}/linux64/chromedriver-linux64.zip"
+          CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${driver_version}/linux64/chromedriver-linux64.zip"
           wget -N ${CHROME_DRIVER_URL}
           unzip chromedriver-linux64.zip
           cd chromedriver-linux64
