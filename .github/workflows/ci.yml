@@ -3,34 +3,37 @@ name: AutoBuy  Continuous Integration
 run-name: ${{ github.actor }} is learning CI/CD & GitHub Actions for a project
 
 on:
-  push:
-    branches:
-      - main
-
+  workflow_dispatch
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Download Chrome Browser  # Version 117.0.5938.149 (Official Build) (x86_64)
+        run: |
+          wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install google-chrome-stable=117.0.5938.149
+
       - name: Download Chrome WebDriver
         run: |
-          Version="117.0.5938.92"
-          CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${Version}/linux64/chromedriver-linux64.zip"
+          driver_version="117.0.5938.92"
+          CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${driver_ersion}/linux64/chromedriver-linux64.zip"
           wget -N ${CHROME_DRIVER_URL}
           unzip chromedriver-linux64.zip
           cd chromedriver-linux64
           chmod +x chromedriver
           mv chromedriver /usr/local/bin/
           
-
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: 3.11.3
+
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Install dependencies
         run: |
