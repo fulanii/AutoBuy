@@ -24,9 +24,18 @@ jobs:
           mv chromedriver /usr/local/bin/
       
       - name: Setting up Chrome
-        uses: browser-actions/setup-chrome@v1
-        with:
-          chrome-version: 117.0
+        run: |
+          # Install Chrome if it's not already installed
+          if [ ! -x "$(command -v google-chrome)" ]; then
+            echo "Installing Chrome"
+            sudo apt-get update
+            sudo apt-get install google-chrome-stable
+          fi
+
+          # Check Chrome version
+          chrome_version=$(google-chrome --version)
+          echo "Installed Chrome version: $chrome_version"
+        shell: bash
 
 
       # - name: Set up Python
