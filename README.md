@@ -62,6 +62,7 @@ Web Automation:
 Version Control and Collaboration:
 - Git
 - GitHub
+- act
 
 Continuous Integration:
 - GitHub Actions: For automating workflows and tasks, such as testing and deployment.

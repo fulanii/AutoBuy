@@ -6,16 +6,16 @@ on:
   workflow_dispatch
 
 jobs:
-  build-and-test:
+  Selenium-Test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download Chrome Browser  # Version 117.0.5938.149 (Official Build) (x86_64)
-        run: |
-          sudo apt-get update
-          sudo apt-get install google-chrome-stable
+      - name: Set up Chrome
+        uses: actions/setup-chrome@v1
+        with:
+          chrome-version: "117.0.5938.149" 
 
-      - name: Download Chrome WebDriver
+      - name: Download Chrome WebDriver # chrome v: 117.0.5938.149
         run: |
           driver_version="117.0.5938.92"
           CHROME_DRIVER_URL="https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/${driver_version}/linux64/chromedriver-linux64.zip"
@@ -24,7 +24,7 @@ jobs:
           cd chromedriver-linux64
           chmod +x chromedriver
           mv chromedriver /usr/local/bin/
-          
+
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -42,6 +42,6 @@ jobs:
         run: |
           pytest src/tests
           
-      # - name: Lint code
-      #   run: |
-      #     pylint src
+      - name: Lint code
+        run: |
+          pylint src
