@@ -5,8 +5,8 @@ import os
 def secrets() -> dict:
     """returns email and password"""
     if 'CI' in os.environ:
-        email = os.environ.get('email')
-        password = os.environ.get('password')
+        email = os.environ.get('EMAIL')
+        password = os.environ.get('PASSWORD')
 
     else:
         file = configparser.ConfigParser()

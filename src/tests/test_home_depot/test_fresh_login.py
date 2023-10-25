@@ -3,11 +3,12 @@ from bot.home_depot.logins import FreshLogin
 from config.get_credential import secrets
 
 class TestFreshLogin:
-    email = secrets()["email"]
-    password = secrets()["password"]
 
     def test_fresh_login(self):
-        fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=True, quit_driver=True)
+        email = secrets()["email"]
+        password = secrets()["password"]
+
+        fresh_login = FreshLogin(email=email, password=password, headless=True, quit_driver=True)
 
         result =  fresh_login.fresh_login()
 
