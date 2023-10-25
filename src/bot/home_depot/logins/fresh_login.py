@@ -82,6 +82,7 @@ class FreshLogin:
             driver.get(self.login_page)
 
         # find username
+        print(f"creds in test fresh login class {self.__email} & {self.__password}")
         user_box = driver.find_element(By.ID, "username")
         user_box.send_keys(self.__email)
 

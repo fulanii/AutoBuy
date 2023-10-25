@@ -8,6 +8,8 @@ class TestFreshLogin:
         email = secrets()["email"]
         password = secrets()["password"]
 
+        print(f"creds in test file {email} & {password}")
+
         fresh_login = FreshLogin(email=email, password=password, headless=True, quit_driver=True)
 
         result =  fresh_login.fresh_login()
