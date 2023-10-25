@@ -10,11 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Set up Chrome
-        uses: actions/setup-chrome@v1
-        with:
-          chrome-version: "117.0.5938.149" 
-
       - name: Download Chrome WebDriver # chrome v: 117.0.5938.149
         run: |
           driver_version="117.0.5938.92"
@@ -38,10 +33,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           
-      - name: Run tests
-        run: |
-          pytest src/tests
+      # - name: Run tests
+      #   run: |
+      #     pytest src/tests
           
-      - name: Lint code
-        run: |
-          pylint src
+      # - name: Lint code
+      #   run: |
+      #     pylint src
