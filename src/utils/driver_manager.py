@@ -29,7 +29,7 @@ class DriverManager:
             options.add_argument("--headless")
         options.add_experimental_option("detach", self.detach)
         if get_chrome_driver_path() == "/usr/local/bin/chromedriver":
-            options.binary_location = "/opt/google/chrome/chrome"
+            # options.binary_location = "/opt/google/chrome/chrome"
             options.add_argument("--no-sandbox")
             options.add_argument("--disable-dev-shm-usage")
 

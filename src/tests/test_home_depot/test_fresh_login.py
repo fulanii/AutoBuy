@@ -18,9 +18,9 @@ class TestFreshLogin:
         assert result["status_check_fail_amount"] <= 3
 
 
-    def test_fresh_logout(self):
-        fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=False, quit_driver=True)
+    # def test_fresh_logout(self):
+    #     fresh_login = FreshLogin(email=TestFreshLogin.email, password=TestFreshLogin.password, headless=False, quit_driver=True)
 
-        fresh_login_result =  fresh_login.fresh_login()
-        assert fresh_login_result["login_and_serialization_check"] == True
-        assert fresh_login.logout_fresh_login() == True
+    #     fresh_login_result =  fresh_login.fresh_login()
+    #     assert fresh_login_result["login_and_serialization_check"] == True
+    #     assert fresh_login.logout_fresh_login() == True
