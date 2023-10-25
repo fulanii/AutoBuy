@@ -27,7 +27,6 @@ jobs:
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: "117.0.5938.149"
-          run: chrome --version
 
 
       # - name: Set up Python
