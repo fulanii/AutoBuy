@@ -24,8 +24,9 @@ jobs:
           mv chromedriver /usr/local/bin/
       
       - name: Setting up Chrome
-        run: |
-          chrome --version
+        uses: browser-actions/setup-chrome@v1
+          run chrome --version
+
 
       # - name: Set up Python
       #   uses: actions/setup-python@v2
