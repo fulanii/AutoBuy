@@ -13,6 +13,8 @@ jobs:
     
     env:
       RUNNING_IN_CI: true
+      EMAIL: ${{ secrets.EMAIL }}
+      PASSWORD: ${{ secrets.PASSWORD }}
 
     steps:
       
