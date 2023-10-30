@@ -1,6 +1,6 @@
 
-name: AutoBuy  Continuous Integration
-run-name: ${{ github.actor }} is learning CI/CD & GitHub Actions for a project
+name: AutoBuy
+run-name: AutoBuy project CI Tests
 
 on: # workflow_dispatch
   push:
