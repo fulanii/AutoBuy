@@ -4,7 +4,7 @@ import os
 
 def secrets() -> dict:
     """returns email and password"""
-    if os.environ.get('RUNNING_IN_CI') == 'True':
+    if os.environ.get('RUNNING_IN_CI') == 'true':
         email = os.environ.get('EMAIL')
         password = os.environ.get('PASSWORD')
 

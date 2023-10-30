@@ -5,8 +5,9 @@ from config.get_credential import secrets
 class TestFreshLogin:
 
     def test_fresh_login(self):
-        email = secrets()["email"]
-        password = secrets()["password"]
+        creds = secrets()
+        email = creds["email"]
+        password = creds["password"]
 
         print(f"CI email is: {email} and pass is: {password}")
 

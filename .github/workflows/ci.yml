@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      RUNNING_IN_CI: True
+      RUNNING_IN_CI: true
 
     steps:
       
