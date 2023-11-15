@@ -9,7 +9,6 @@ class TestFreshLogin:
         email = creds["email"]
         password = creds["password"]
 
-        print(creds)
         
         fresh_login = FreshLogin(email=email, password=password, headless=True, quit_driver=True)
         result =  fresh_login.fresh_login()

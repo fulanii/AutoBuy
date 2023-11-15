@@ -12,15 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
+      RUNNING_IN_CI: true
       EMAIL: ${{ secrets.EMAIL }}
       PASSWORD: ${{ secrets.PASSWORD }}
-      RUNNING_IN_CI: true
+
 
     steps:
       - name: Access Secrets
         run: |
           echo $EMAIL
-          echo $PASSWORD  
+          echo $PASSWORD
           
       - name: Download Chrome WebDriver # chrome v: 117.0.5938.149
         run: |
