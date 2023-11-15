@@ -88,7 +88,7 @@ class FreshLogin:
         # click continue
         continue_btn = driver.find_element(
             By.CSS_SELECTOR,
-            "form button[data-automation-id='signInContinueButton'] ")
+            "form button[id='sign-in-button'][data-automation-id='signIn'] ")
         continue_btn.click()
 
         try:

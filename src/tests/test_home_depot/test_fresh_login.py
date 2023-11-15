@@ -25,7 +25,7 @@ class TestFreshLogin:
         email = creds["email"]
         password = creds["password"]
 
-        fresh_login = FreshLogin(email=email, password=password, headless=True, quit_driver=True)
+        fresh_login = FreshLogin(email=email, password=password, headless=True, quit_driver=False)
         fresh_login_result =  fresh_login.fresh_login()
 
         assert fresh_login_result["login_and_serialization_check"] == True
